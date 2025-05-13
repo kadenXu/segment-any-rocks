@@ -17,7 +17,8 @@ from my_sam_manager import MySamManager
 
 storage = r"labels/"  # TODO: CHANGE ME
 images_dir = r"data/Dataset/Igneous/Basalt"  # TODO: CHANGE ME
-images = ({"image": np.array(plt.imread(file)), "filename": file.name} for file in os.scandir(images_dir))
+images = ({"image": np.array(plt.imread(file)), "filename": file.name} 
+          for file in os.scandir(images_dir) if file.name.endswith(".jpg") or file.name.endswith(".jpeg"))
 
     
 # image_src = r"data/Dataset/Igneous/Basalt/6.jpg"
